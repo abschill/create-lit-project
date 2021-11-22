@@ -2,5 +2,34 @@
   "name": "create-lit-library-full",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build:js": "webpack",
+    "build:css": "postcss ./src/styles/tailwind.css -d public"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@stylelint/postcss-css-in-js": "^0.37.2",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "postcss-discard-comments": "^5.0.1",
+    "postcss-discard-empty": "^5.0.1",
+    "postcss-loader": "^6.2.0",
+    "postcss-syntax": "^0.36.2",
+    "tailwindcss": "^2.2.19",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
+  }
 }
