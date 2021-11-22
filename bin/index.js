@@ -2,7 +2,7 @@
 "use strict";
 
 const path = require( 'path' );
-const fs = require( 'fs' );
+const fs = require( 'fs-extra' );
 const color = require( 'terminal-color' );
 const { template, argument } = require( './enums' );
 
@@ -62,4 +62,14 @@ if( mvInt < 16 ) {
 color( 'FgYellow', 'Creating Project in' );
 color( 'FgBlue', _cwd );
 color( 'FgYellow', `Setting up ${template_name} Project` );
+
+switch( template_name ) {
+    case 'tailwind':
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd )
+        break;
+    default: 
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd )
+        break;
+}
+
 color( 'FgGreen', `Process Completed in ${uptime().toFixed(2)} seconds` );
