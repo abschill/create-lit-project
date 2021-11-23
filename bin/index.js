@@ -64,10 +64,10 @@ switch( template_name ) {
     
     case 'tailwind':
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd )
-        return setTimeout(()=> cleanup(), 2000 );
+        return cleanup();
     default: 
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd )
-        return setTimeout(()=> cleanup(), 2000 );
+        return cleanup();
 }
 
 
