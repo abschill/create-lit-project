@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build:js": "webpack",
-    "build:css": "postcss ./src/styles/tailwind.css -d public"
+    "build:css": "postcss ./src/styles/tailwind.css -d public",
+    "build":"yarn build:js && yarn build:css"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
