@@ -1,5 +1,5 @@
 {
-  "name": "create-lit-library-full",
+  "name": "create-lit-project-tailwind",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -20,7 +20,6 @@
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
     "postcss-discard-comments": "^5.0.1",

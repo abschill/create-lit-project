@@ -10,7 +10,6 @@ const { template, argument } = require( './enums' );
 const {  
     argv,  
     emitWarning,
-    stdout,
     stderr,
     platform,
     version,
@@ -19,7 +18,7 @@ const {
 const args = argv.slice( 2 );
 
 const argName = ( name ) => {
-    if( argument.includes( name ) ) {
+    if( argument.includes( name ) || template.includes( name ) ) {
         return args.filter( e => e.includes( name ) )?.[0]
         ?.split( `--${name}=` )?.pop();
     }
@@ -64,6 +63,9 @@ switch( template_name ) {
     
     case 'tailwind':
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd )
+        return cleanup();
+    case 'sass':
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'sass' ), _cwd )
         return cleanup();
     default: 
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd )

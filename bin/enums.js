@@ -1,6 +1,7 @@
 module.exports.template = [
     'default',
-    'tailwind'
+    'tailwind',
+    'sass'
 ]
 
 module.exports.argument = [

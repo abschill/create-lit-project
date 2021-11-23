@@ -1,0 +1,14 @@
+import { LitElement, html, css } from 'lit';
+class MyElement extends LitElement {
+    createRenderRoot() {
+        return this;
+    }
+    constructor() {
+        super();
+    }
+
+    render() {
+        return html`<h1 class="my-element">Sass/Lit Template</h1>`;
+    }
+}
+customElements.define( 'my-element', MyElement );
