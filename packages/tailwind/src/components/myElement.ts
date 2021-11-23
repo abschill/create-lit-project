@@ -9,7 +9,7 @@ class MyElement extends LitElement {
 
     render() {
         return html`<div class="px-4 text-xl text-black">
-          Tailwind Template.
+          Lit / Tailwind Template.
         </div>`;
     }
 }

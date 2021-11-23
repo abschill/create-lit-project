@@ -3,20 +3,16 @@
 
 const path = require( 'path' );
 const fs = require( 'fs-extra' );
+
 const color = require( 'terminal-color' );
 const { template, argument } = require( './enums' );
 
-
-const { 
-    addListener, 
-    argv, 
-    arch, 
-    chdir, 
-    cwd, 
-    emit,
+const {  
+    argv,  
     emitWarning,
     stdout,
     stderr,
+    platform,
     version,
     uptime
 } = process;
@@ -41,7 +37,7 @@ let _cwd = process.cwd();
 const _setPath = args[0];
 
 if( _setPath !== '.' ) {
-    if( process.platform === 'win32' ) {
+    if( platform === 'win32' ) {
         _cwd = _cwd + '\\' + _setPath;
     }
     else {
@@ -52,24 +48,27 @@ if( _setPath !== '.' ) {
 
 
 const template_name = argName( 'template' ) ?? 'default';
-
-
 const mvInt = parseInt( major_version );
 if( mvInt < 16 ) {
     emitWarning( `Node Version ${mvInt} is not LTS, consider updating or you may encounter bugs` );
 }
 
+
+const cleanup = () => {
+    color( 'FgGreen', `\nProcess Completed in ${uptime().toFixed(2)} seconds` );
+}
 color( 'FgYellow', 'Creating Project in' );
 color( 'FgBlue', _cwd );
-color( 'FgYellow', `Setting up ${template_name} Project` );
-
+color( 'FgYellow', `Setting up ${template_name} Project\n ` );
 switch( template_name ) {
+    
     case 'tailwind':
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd )
-        break;
+        return setTimeout(()=> cleanup(), 2000 );
     default: 
         fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd )
-        break;
+        return setTimeout(()=> cleanup(), 2000 );
 }
 
-color( 'FgGreen', `Process Completed in ${uptime().toFixed(2)} seconds` );
+
+

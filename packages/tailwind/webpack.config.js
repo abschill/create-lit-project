@@ -4,6 +4,7 @@ module.exports = {
     context: path.resolve( __dirname, 'src/components' ),
     devtool: 'inline-source-map',
     entry: filterFiles( path.join( __dirname, 'src', 'components' ) ),
+    mode: 'development',
     module: {
         rules: [
             {
@@ -26,7 +27,7 @@ module.exports = {
     },
     target: 'web',
     devServer: {
-        contentBase: path.join( process.cwd(), 'public' ),
+        static: path.join( process.cwd(), 'public' ),
         compress: true,
         port: 3000,
       },
