@@ -1,12 +1,12 @@
 {
   "name": "create-lit-project",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "create-lit-project",
-      "version": "0.1.2",
+      "version": "0.1.5",
       "license": "MIT",
       "dependencies": {
         "terminal-color": "^0.1.2"
