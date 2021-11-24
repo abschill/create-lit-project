@@ -61,16 +61,16 @@ color( 'FgBlue', _cwd );
 color( 'FgYellow', `Setting up ${template_name} Project\n ` );
 switch( template_name ) {
     case 'tailwind':
-        fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd )
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'tailwind' ), _cwd );
         return cleanup();
     case 'sass':
-        fs.copySync( path.resolve( __dirname, '..', 'packages', 'sass' ), _cwd )
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'sass' ), _cwd );
         return cleanup();
     case 'full-default':
-        fs.copySync( path.resolve( __dirname, '..', 'packages', 'full-default' ) )
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'full-default' ), _cwd );
         return cleanup();
     default: 
-        fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd )
+        fs.copySync( path.resolve( __dirname, '..', 'packages', 'default' ), _cwd );
         return cleanup();
 }
 
