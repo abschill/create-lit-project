@@ -1,4 +1,5 @@
 node_modules
 yarn.lock
 packages/*/public/*
+packages/*/yarn.*
 !packages/*/public/index.html

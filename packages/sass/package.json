@@ -8,7 +8,7 @@
     "build:sass": "sass ./src/sass/style.scss:./public/style.css",
     "watch:js": "webpack --watch",
     "watch:sass": "sass --watch ./src/sass/style.scss:./public/style.css",
-    "dev": "npm-run-all serve watch:sass watch:js",
+    "dev": "npm-run-all -p serve watch:sass watch:js",
     "serve": "npx webpack serve"
   },
   "devDependencies": {

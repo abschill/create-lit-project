@@ -10,8 +10,9 @@ npx create-lit-project [outdir] [options]
 ## Options
 
 --template=tailwind
+--template=sass
+--template=full-default
 
-for tailwind css setup out of the box
 
 ## Example
 
