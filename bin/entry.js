@@ -1,19 +1,12 @@
 const { argv, version, emitWarning } = require( 'process' );
 const program = require( './program' );
 const args = argv.slice( 2 );
-const headParam = args.shift();
-let dirName = 'undefined';
+let dirName = args[0].includes( '-' ) ? 'undefined' : args.shift();
 
-//TEST 11/27 - mafrans: node bin/entry [dirName] --ts -server -decorators
-
-if( !headParam.includes( '-' ) ) {
-    if( !headParam !== '.' ) {
-        dirName = headParam;
-    }
-    else {
-        dirName = '';
-    }
+if( dirName === '.' ) {
+    dirname = '';
 }
+
 const params = [], 
       options = [],
       configArgs = args.filter( arg => !( arg[0] !== '-' && arg[1] !== '-' ) );

@@ -18,10 +18,13 @@ module.exports.languageMap = [
 module.exports.params = [
     'ts',
     'js',
+    'typescript',
+    'javascript',
     'tailwind',
     'sass',
     'shadow',
-    'css'
+    'css',
+    'default'
 ];
 
 module.exports.options = [

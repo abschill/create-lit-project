@@ -1,6 +1,12 @@
 const path = require( 'path' );
 const enums = require( './enums' );
 const { cwd, platform }= require( 'process' );
+
+const paramsParse = ( params ) => {
+    console.log( params );
+    return params;
+}
+
 const program = ( config ) => {
     let _path =  path.join( cwd(), config.dirName );
 
@@ -10,7 +16,7 @@ const program = ( config ) => {
     else {
         _path = _path.replace( /\\/, '/' );
     }
-    console.log( config );
+    //console.log( config );
     // console.log( _path );
 
     const acceptedParams = config.params.filter( param => enums.params.includes( param ) );
@@ -23,7 +29,10 @@ const program = ( config ) => {
         options: acceptedOptions
     };
 
-    console.log( cleanedConfig );
+    const toBuildParams = paramsParse( cleanedConfig );
+
+    
+     
 }
 
 
