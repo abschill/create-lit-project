@@ -1,6 +1,9 @@
 const path = require( 'path' );
 const { cwd, platform }= require( 'process' );
 const { languageMap, flags } = require( './enums' );
+const fs = require( 'fs-extra' );
+const color = require( 'terminal-color' );
+
 const getArg = ( config, arg ) => {
     return config.filter( flag => flag.flag === arg ).shift();
 };
@@ -149,11 +152,11 @@ const program = ( config ) => {
     if( build.procedure.length === 0 ) {
         if( build.language === 'js' ) {
             const inPath = buildJS( build );
-            console.log( inPath );
+            fs.copySync( inPath, build.outputPath );
         }
         else if( build.language === 'ts' ) {
             const inPath = buildTS( build );
-            console.log( inPath );
+            fs.copySync( inPath, build.outputPath );
         }
     }
     else {
