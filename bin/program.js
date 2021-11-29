@@ -6,18 +6,81 @@ const getArg = ( config, arg ) => {
 };
 
 const buildTS = ( build ) => {
-
+    let inPath;
+    switch( build.styles ) {
+        case 'sass':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'sass' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'sass-server' );
+            }
+            return inPath;
+        case 'tailwind':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'tailwind' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'tailwind-server' );
+            }
+            return inPath;
+        case 'css':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'css' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'css-server' );
+            }
+            return inPath;
+        case 'shadow':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'shadow' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'ts', 'shadow-server' );
+            }
+            return inPath;
+        default:
+            break;
+        
+    }
 }
 
 const buildJS = ( build ) => {
-
+    let inPath;
     switch( build.styles ) {
+        case 'sass':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'sass' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'sass-server' );
+            }
+            return inPath;
+        case 'tailwind':
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'tailwind' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'tailwind-server' );
+            }
+            return inPath;
         case 'css':
-            console.log( 'css' );
-            break;
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'css' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'css-server' );
+            }
+            return inPath;
         case 'shadow':
-            console.log( build );
-            break;
+            if( !build.server ) {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'shadow' );
+            }
+            else {
+                inPath = path.join( process.cwd(), 'packages', 'js', 'shadow-server' );
+            }
+            return inPath;
         default:
             break;
     }
@@ -85,10 +148,12 @@ const program = ( config ) => {
 
     if( build.procedure.length === 0 ) {
         if( build.language === 'js' ) {
-            buildJS( build );
+            const inPath = buildJS( build );
+            console.log( inPath );
         }
         else if( build.language === 'ts' ) {
-            buildTS( build );
+            const inPath = buildTS( build );
+            console.log( inPath );
         }
     }
     else {
