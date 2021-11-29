@@ -16,15 +16,10 @@ module.exports.languageMap = [
 ];
 
 module.exports.params = [
-    'ts',
-    'js',
-    'typescript',
-    'javascript',
     'tailwind',
     'sass',
     'shadow',
-    'css',
-    'default'
+    'css'
 ];
 
 module.exports.options = [
@@ -32,3 +27,12 @@ module.exports.options = [
     'decorators',
     'ssr'
 ];
+
+
+module.exports.flags = [
+    { symbol: '-s', default: 'shadow', alias: '--styles' },
+    { symbol: '-l', default: 'js', alias: '--language' },
+    { symbol: '-d', default: false, alias: '--decorators' },
+    { symbol: '-http', default: false, alias: '--server' },
+    { symbol: '-o', default: '.', alias: '--output' }
+]

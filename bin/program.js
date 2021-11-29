@@ -1,38 +1,53 @@
 const path = require( 'path' );
-const enums = require( './enums' );
 const { cwd, platform }= require( 'process' );
-
-const paramsParse = ( params ) => {
-    console.log( params );
-    return params;
-}
+const { languageMap, flags } = require( './enums' );
+const getArg = ( config, arg ) => {
+    return config.filter( flag => flag.flag === arg ).shift();
+};
 
 const program = ( config ) => {
-    let _path =  path.join( cwd(), config.dirName );
+    const build = {};
+    // console.log( config );
+    const flagSymbols = flags.map( flag => flag.symbol );
+    const flagSymbolsInserted = config.map( arg => {
+        if( flagSymbols.includes( arg.flag ) ) {
+            return arg;
+        }
+        else {
+            return null
+        }
+    } );
+    // console.log( flagSymbolsInserted );
+    const unInitializedProps = flags.map( flag => {
+        const symbolsInserted = flagSymbolsInserted.map( f => f.flag );
+        if( !symbolsInserted.includes( flag.symbol ) ) {
+            return { flag: flag.symbol, value: flag.default };
+        }
+        else {
+            return null
+        }
+    } ).filter( e => e );
+    build.procedure = [...flagSymbolsInserted, ...unInitializedProps ];
+
+    const pathArg = getArg( build.procedure, '-o' );
+    let _buildPath =  path.join( cwd(), pathArg.value  );
+    
+    //Remove Path arg from procedure todo
+    build.procedure.splice(  build.procedure.indexOf( pathArg ), 1 );
+
 
     if( platform === 'win32' ) {
-        _path = _path.replace( /\//, '\\' );
+        _buildPath = _buildPath.replace( /\//, '\\' );
     }
     else {
-        _path = _path.replace( /\\/, '/' );
-    }
-    //console.log( config );
-    // console.log( _path );
+        _buildPath = _buildPath.replace( /\\/, '/' );
+    } 
+    //format path arg into the relative path
+    build.outputPath = _buildPath;
 
-    const acceptedParams = config.params.filter( param => enums.params.includes( param ) );
-    const acceptedOptions = config.options.filter( opt => enums.options.includes( opt ) );
-
-
-    const cleanedConfig = {
-        writePath: _path,
-        params: acceptedParams,
-        options: acceptedOptions
-    };
-
-    const toBuildParams = paramsParse( cleanedConfig );
-
+    //Todo: parse next argset after path then build the corresponding dir
+    console.log( build );
     
-     
 }
 
 
