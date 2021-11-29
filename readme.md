@@ -1,6 +1,4 @@
 # create-lit-project
-
-
 ## Usage
 
 ```

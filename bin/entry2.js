@@ -32,6 +32,4 @@ const run = () => {
     } ).filter( e => e );
     program( args );
 }
-
-
 run();
