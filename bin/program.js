@@ -42,10 +42,26 @@ const program = ( config ) => {
     else {
         _buildPath = _buildPath.replace( /\\/, '/' );
     } 
-    //format path arg into the relative path
     build.outputPath = _buildPath;
+    
+    const langArg = getArg( build.procedure, '-l' );
+    
+    const buildLang = languageMap.filter( lang => lang.includes( langArg.value ) ).shift()[0];
+    build.language = buildLang;
+    build.procedure.splice(  build.procedure.indexOf( langArg ), 1 );
 
-    //Todo: parse next argset after path then build the corresponding dir
+    const buildStyles = getArg( build.procedure, '-s' );
+    build.styles = buildStyles.value;
+    build.procedure.splice(  build.procedure.indexOf( buildStyles ), 1 );
+
+    const buildServer = getArg( build.procedure, '-http' )
+    build.server = buildServer.value;
+    build.procedure.splice( build.procedure.indexOf( buildServer ), 1 );
+    
+    const buildDecorators = getArg( build.procedure, '-d' );
+    build.decorators = buildDecorators.value;
+    build.procedure.splice( build.procedure.indexOf( buildDecorators ), 1 );
+
     console.log( build );
     
 }

@@ -13,10 +13,9 @@ if( mvInt < 16 ) {
 const args = flags.map( ( flag, idx ) => {
     const sym = programArg.indexOf( flag.symbol );
     const alias = programArg.indexOf( flag.alias );
-
     if( sym !== -1 ) {
 
-        if( flag.symbol === '-http' ) {
+        if( flag.symbol === '-http' || flag.symbol === '-d' ) {
             return { flag: flag.symbol, value: true };
         }
         else {
