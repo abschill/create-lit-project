@@ -5,6 +5,26 @@ const getArg = ( config, arg ) => {
     return config.filter( flag => flag.flag === arg ).shift();
 };
 
+const buildTS = ( build ) => {
+
+}
+
+const buildJS = ( build ) => {
+
+    switch( build.styles ) {
+        case 'css':
+            console.log( 'css' );
+            break;
+        case 'shadow':
+            console.log( build );
+            break;
+        default:
+            break;
+    }
+}
+
+
+
 const program = ( config ) => {
     const build = {};
     // console.log( config );
@@ -14,7 +34,7 @@ const program = ( config ) => {
             return arg;
         }
         else {
-            return null
+            return null;
         }
     } );
     // console.log( flagSymbolsInserted );
@@ -24,7 +44,7 @@ const program = ( config ) => {
             return { flag: flag.symbol, value: flag.default };
         }
         else {
-            return null
+            return null;
         }
     } ).filter( e => e );
     build.procedure = [...flagSymbolsInserted, ...unInitializedProps ];
@@ -62,7 +82,18 @@ const program = ( config ) => {
     build.decorators = buildDecorators.value;
     build.procedure.splice( build.procedure.indexOf( buildDecorators ), 1 );
 
-    console.log( build );
+
+    if( build.procedure.length === 0 ) {
+        if( build.language === 'js' ) {
+            buildJS( build );
+        }
+        else if( build.language === 'ts' ) {
+            buildTS( build );
+        }
+    }
+    else {
+        console.error( 'edge case' );
+    }
     
 }
 

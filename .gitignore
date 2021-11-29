@@ -2,4 +2,5 @@ node_modules
 yarn.lock
 packages/*/public/*
 packages/*/yarn.*
+packages/*/api/dist/*
 !packages/*/public/index.html

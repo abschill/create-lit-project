@@ -1,0 +1,5 @@
+api/dist
+yarn.lock
+node_modules
+public/*
+!public/index.html

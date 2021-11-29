@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "esModuleInterop": true,  
+        "removeComments": true,
+        "sourceMap": true,
+
+        "module": "CommonJS",
+        "target": "es2015",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "outDir": "./dist",
+        "experimentalDecorators": true,
+        "strict": true,  
+       
+    }
+}
