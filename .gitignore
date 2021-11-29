@@ -4,3 +4,5 @@ packages/*/public/*
 packages/*/yarn.*
 packages/*/api/dist/*
 !packages/*/public/index.html
+bin/entry.js
+bin/index.js
