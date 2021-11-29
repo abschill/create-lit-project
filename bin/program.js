@@ -6,10 +6,10 @@ const color = require( 'terminal-color' );
 
 const setPath = ( lang, style, server ) => {
     if( !server ) {
-        return path.join( process.cwd(), 'packages', lang, style );
+        return path.resolve( __dirname, '..', 'packages', lang, style );
     }
     else {
-        return path.join( process.cwd(), 'packages', lang, `${style}-server` );
+        return path.resolve( __dirname, '..', 'packages', lang, `${style}-server` );
     }
 }
 
