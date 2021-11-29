@@ -14,23 +14,14 @@ const args = flags.map( ( flag, idx ) => {
     const sym = programArg.indexOf( flag.symbol );
     const alias = programArg.indexOf( flag.alias );
     if( sym !== -1 ) {
-
-        if( flag.symbol === '-http' ) {
-            return { flag: flag.symbol, value: true };
-        }
-        else {
-            return { flag: flag.symbol, value: programArg[sym + 1] };
-        }
-        
+        return flag.symbol === '-http' ? 
+        { flag: flag.symbol, value: true }:
+        { flag: flag.symbol, value: programArg[sym + 1] };
     }
     else if( alias !== -1 ) {
-        if( flag.alias === '--server' ) {
-            return { flag: flag.symbol, value: true }
-        }
-        else {
-            return { flag: flag.symbol, value: programArg[alias + 1] };
-        }
-        
+        return flag.alias === '--server' ?
+        { flag: flag.symbol, value: true }:
+        { flag: flag.symbol, value: programArg[alias + 1] };
     }
     else {
         return null;
