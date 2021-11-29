@@ -1,5 +1,5 @@
 {
-  "name": "create-lit-project-tailwind",
+  "name": "create-lit-project-tailwind-js-server",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "watch:js": "webpack --watch",
     "watch:css": "postcss -w ./src/styles/tailwind.css -d public ",
     "serve": "npx webpack serve",
-    "dev":"npm-run-all -p watch:css watch:js serve"
+    "dev": "npm-run-all -p watch:css watch:js serve"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -18,7 +18,6 @@
     "@babel/plugin-proposal-decorators": "^7.16.4",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
-    "@stylelint/postcss-css-in-js": "^0.37.2",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "npm-run-all": "^4.1.5",
@@ -29,8 +28,6 @@
     "postcss-loader": "^6.2.0",
     "postcss-syntax": "^0.36.2",
     "tailwindcss": "^2.2.19",
-    "ts-loader": "^9.2.6",
-    "typescript": "^4.5.2",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
