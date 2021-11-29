@@ -31,7 +31,7 @@ Default: shadow
 
 - -http, --server
 
-Boolean, if you put it, its true
+Boolean, if you put it, it will set up an actual server rather than webpack dev server
 Default: false
 
 
@@ -41,4 +41,4 @@ Default: false
 npx create-lit-project -o src
 ```
 
-Makes a new project boiler plate at src. If you do not define one, it will be defaulted to '.' which will resolve to the current working directory running the command. 
+Makes a new project boiler plate at src. If you do not define one, it will be defaulted to '.' which will resolve to the current working directory running the command. Since only the output flag is specified, the other flags will be defaulted as defined above. 
