@@ -15,7 +15,7 @@ const args = flags.map( ( flag, idx ) => {
     const alias = programArg.indexOf( flag.alias );
     if( sym !== -1 ) {
 
-        if( flag.symbol === '-http' || flag.symbol === '-d' ) {
+        if( flag.symbol === '-http' ) {
             return { flag: flag.symbol, value: true };
         }
         else {
@@ -24,7 +24,13 @@ const args = flags.map( ( flag, idx ) => {
         
     }
     else if( alias !== -1 ) {
-        return { flag: flag.symbol, value: programArg[alias + 1] };
+        if( flag.alias === '--server' ) {
+            return { flag: flag.symbol, value: true }
+        }
+        else {
+            return { flag: flag.symbol, value: programArg[alias + 1] };
+        }
+        
     }
     else {
         return null;

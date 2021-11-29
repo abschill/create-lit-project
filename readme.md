@@ -4,32 +4,41 @@
 ## Usage
 
 ```
-npx create-lit-project [outdir] [options]
+npx create-lit-project [flags]
 ```
 
 ## Options
 
---template=tailwind
---template=sass
---template=full-default
+Symbol | Alias
+
+- -o, --output
+
+Expects: output directory relative to cwd of calling directory
+
+Default: .
+
+- -l, --language
+
+Allowed: ts, js, typescript, javascript
+
+Default: js
+
+- -s, --styles
+
+Allowed: shadow, css, sass, tailwind
+
+Default: shadow
+
+- -http, --server
+
+Boolean, if you put it, its true
+Default: false
 
 
 ## Example
 
 ```
-npx create-lit-project newProjectDir --template=tailwind
+npx create-lit-project -o src
 ```
 
-Makes a new project boiler plate at newProjectDir. If you do not define one, it will be created in a directory named undefined xd
-
-If you want to create it in the directory you're calling from, just write
-
-```
-npx create-lit-project .
-```
-
-or
-
-```
-npx create-lit-project . --template-tailwind
-```
+Makes a new project boiler plate at src. If you do not define one, it will be defaulted to '.' which will resolve to the current working directory running the command. 

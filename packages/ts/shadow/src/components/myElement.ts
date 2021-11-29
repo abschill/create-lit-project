@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators';
+import { customElement } from 'lit/decorators.js';
 @customElement( 'my-element' )
-class MyElement extends LitElement {
+export class MyElement extends LitElement {
     static get styles() {
         return css`
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');

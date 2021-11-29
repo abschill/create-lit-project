@@ -32,7 +32,6 @@ module.exports.options = [
 module.exports.flags = [
     { symbol: '-s', default: 'shadow', alias: '--styles' },
     { symbol: '-l', default: 'js', alias: '--language' },
-    { symbol: '-d', default: false, alias: '--decorators' },
     { symbol: '-http', default: false, alias: '--server' },
     { symbol: '-o', default: '.', alias: '--output' }
 ]

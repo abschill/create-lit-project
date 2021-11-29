@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators';
+import { customElement } from 'lit/decorators.js';
 @customElement( 'my-element' )
-class MyElement extends LitElement {
+export class MyElement extends LitElement {
     createRenderRoot() {
         return this;
     }

@@ -143,10 +143,6 @@ const program = ( config ) => {
     const buildServer = getArg( build.procedure, '-http' )
     build.server = buildServer.value;
     build.procedure.splice( build.procedure.indexOf( buildServer ), 1 );
-    
-    const buildDecorators = getArg( build.procedure, '-d' );
-    build.decorators = buildDecorators.value;
-    build.procedure.splice( build.procedure.indexOf( buildDecorators ), 1 );
 
 
     if( build.procedure.length === 0 ) {
