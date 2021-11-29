@@ -4,97 +4,22 @@ const { languageMap, flags } = require( './enums' );
 const fs = require( 'fs-extra' );
 const color = require( 'terminal-color' );
 
+const setPath = ( lang, style, server ) => {
+    if( !server ) {
+        return path.join( process.cwd(), 'packages', lang, style );
+    }
+    else {
+        return path.join( process.cwd(), 'packages', lang, `${style}-server` );
+    }
+}
+
 const getArg = ( config, arg ) => {
     return config.filter( flag => flag.flag === arg ).shift();
 };
-
-const buildTS = ( build ) => {
-    let inPath;
-    switch( build.styles ) {
-        case 'sass':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'sass' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'sass-server' );
-            }
-            return inPath;
-        case 'tailwind':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'tailwind' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'tailwind-server' );
-            }
-            return inPath;
-        case 'css':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'css' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'css-server' );
-            }
-            return inPath;
-        case 'shadow':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'shadow' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'ts', 'shadow-server' );
-            }
-            return inPath;
-        default:
-            break;
-        
-    }
-}
-
-const buildJS = ( build ) => {
-    let inPath;
-    switch( build.styles ) {
-        case 'sass':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'sass' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'sass-server' );
-            }
-            return inPath;
-        case 'tailwind':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'tailwind' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'tailwind-server' );
-            }
-            return inPath;
-        case 'css':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'css' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'css-server' );
-            }
-            return inPath;
-        case 'shadow':
-            if( !build.server ) {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'shadow' );
-            }
-            else {
-                inPath = path.join( process.cwd(), 'packages', 'js', 'shadow-server' );
-            }
-            return inPath;
-        default:
-            break;
-    }
-}
-
-
-
 const program = ( config ) => {
     const build = {};
-    // console.log( config );
     const flagSymbols = flags.map( flag => flag.symbol );
+    color( 'FgBlue', 'Parsing Args..' );
     const flagSymbolsInserted = config.map( arg => {
         if( flagSymbols.includes( arg.flag ) ) {
             return arg;
@@ -103,7 +28,6 @@ const program = ( config ) => {
             return null;
         }
     } );
-    // console.log( flagSymbolsInserted );
     const unInitializedProps = flags.map( flag => {
         const symbolsInserted = flagSymbolsInserted.map( f => f.flag );
         if( !symbolsInserted.includes( flag.symbol ) ) {
@@ -113,12 +37,11 @@ const program = ( config ) => {
             return null;
         }
     } ).filter( e => e );
+    color( 'FgBlue', 'Creating Build Procedure..' );
     build.procedure = [...flagSymbolsInserted, ...unInitializedProps ];
-
+    color( 'FgBlue', 'Finding System Path..' );
     const pathArg = getArg( build.procedure, '-o' );
     let _buildPath =  path.join( cwd(), pathArg.value  );
-    
-    //Remove Path arg from procedure todo
     build.procedure.splice(  build.procedure.indexOf( pathArg ), 1 );
 
 
@@ -128,6 +51,7 @@ const program = ( config ) => {
     else {
         _buildPath = _buildPath.replace( /\\/, '/' );
     } 
+
     build.outputPath = _buildPath;
     
     const langArg = getArg( build.procedure, '-l' );
@@ -146,19 +70,14 @@ const program = ( config ) => {
 
 
     if( build.procedure.length === 0 ) {
-        if( build.language === 'js' ) {
-            const inPath = buildJS( build );
-            fs.copySync( inPath, build.outputPath );
-        }
-        else if( build.language === 'ts' ) {
-            const inPath = buildTS( build );
-            fs.copySync( inPath, build.outputPath );
-        }
+        const inPath = setPath( build.language, build.styles, build.server );
+        fs.copySync( inPath, build.outputPath );
+        color( 'FgGreen', 'Success at\n' + build.outputPath );
+
     }
     else {
-        console.error( 'edge case' );
+        color( 'FgRed', 'Something Went wrong with the procedure' );
     }
-    
 }
 
 
