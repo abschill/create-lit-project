@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
-class MyElement extends LitElement {
+import { customElement } from 'lit/decorators';
+@customElement( 'my-element' )
+export class MyElement extends LitElement {
     createRenderRoot() {
         return this;
     }
@@ -11,4 +13,3 @@ class MyElement extends LitElement {
         return html`<h1 class="my-element">Sass/Lit Template</h1>`;
     }
 }
-customElements.define( 'my-element', MyElement );

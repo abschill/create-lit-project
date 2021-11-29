@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import { customElement } from 'lit/decorators';
+@customElement( 'my-element' )
 class MyElement extends LitElement {
     static get styles() {
         return css`
@@ -18,4 +20,3 @@ class MyElement extends LitElement {
         </div>`;
     }
 }
-customElements.define( 'my-element', MyElement );

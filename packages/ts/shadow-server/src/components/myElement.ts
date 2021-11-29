@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
-class MyElement extends LitElement {
+import { customElement } from 'lit/decorators';
+@customElement( 'my-element' )
+export class MyElement extends LitElement {
     static get styles() {
         return css`
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
@@ -18,4 +20,3 @@ class MyElement extends LitElement {
         </div>`;
     }
 }
-customElements.define( 'my-element', MyElement );
