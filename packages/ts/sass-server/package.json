@@ -10,7 +10,9 @@
     "watch:sass": "sass --watch ./src/sass/style.scss:./public/style.css",
     "build:server": "tsc --project ./api",
     "watch:server": "tsc --watch --project ./api",
-    "dev": "npm-run-all -p serve watch:server watch:sass watch:src",
+    "setup": "yarn build:src && yarn build:sass && yarn build:server",
+    "devServer": "npm-run-all -p serve watch:server watch:sass watch:src",
+    "dev": "yarn setup && yarn devServer",
     "serve": "nodemon index"
   },
   "devDependencies": {

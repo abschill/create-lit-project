@@ -8,7 +8,9 @@
     "watch:src": "webpack --watch",
     "build:server": "tsc --project ./api",
     "watch:server": "tsc --watch --project ./api",
-    "dev": "npm-run-all -p serve watch:server watch:src",
+    "setup": "yarn build:src && yarn build:server",
+    "devServer": "npm-run-all -p serve watch:server watch:src",
+    "dev": "yarn setup && yarn devServer",
     "serve": "nodemon index"
   },
   "dependencies": {

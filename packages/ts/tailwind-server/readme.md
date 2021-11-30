@@ -1,4 +1,13 @@
-Tailwind Lit Starter Template
+To Start
 
+    yarn install
+    
+or
 
-run the build scripts, then serve and get hot reloads in browser.
+    npm install
+
+then
+    
+    yarn dev
+
+if using npm, change package.json scripts to npm not yarn calls

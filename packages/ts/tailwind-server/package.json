@@ -11,7 +11,9 @@
     "watch:css": "postcss -w ./src/styles/tailwind.css -d public ",
     "build:server": "tsc --project ./api",
     "watch:server": "tsc --watch --project ./api",
-    "dev": "npm-run-all -p serve watch:server watch:css watch:src",
+    "setup": "yarn build:src && yarn build:css && yarn build:server",
+    "devServer": "npm-run-all -p serve watch:server watch:css watch:src",
+    "dev": "yarn setup && yarn devServer",
     "serve": "nodemon index"
   },
   "devDependencies": {

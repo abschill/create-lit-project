@@ -1,6 +1,6 @@
 const path = require( 'path' );
 const { cwd, platform }= require( 'process' );
-const { languageMap, flags } = require( './enums' );
+const { languageMap, flags, gitIgnore } = require( './enums' );
 const fs = require( 'fs-extra' );
 const color = require( 'terminal-color' );
 
@@ -72,8 +72,9 @@ const program = ( config ) => {
     if( build.procedure.length === 0 ) {
         const inPath = setPath( build.language, build.styles, build.server );
         fs.copySync( inPath, build.outputPath );
+        fs.writeFileSync( path.resolve( build.outputPath, '.gitignore' ), gitIgnore )
         color( 'FgGreen', 'Success at\n' + build.outputPath );
-
+        color( 'FgGreen', `Created ${build.language} Project with ${build.styles}` );
     }
     else {
         color( 'FgRed', 'Something Went wrong with the procedure' );

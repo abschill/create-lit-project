@@ -1,3 +1,4 @@
+module.exports.gitIgnore = 'node_modules\napi/dist\npublic/*\n!/public/index.html';
 module.exports.languageMap = [
     [ 'js', 'javascript' ],
     [ 'ts', 'typescript' ]
