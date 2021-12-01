@@ -32,6 +32,7 @@
     "postcss-discard-comments": "^5.0.1",
     "postcss-discard-empty": "^5.0.1",
     "postcss-loader": "^6.2.0",
+    "postcss-nested": "^5.0.6",
     "postcss-syntax": "^0.36.2",
     "tailwindcss": "^2.2.19",
     "ts-loader": "^9.2.6",

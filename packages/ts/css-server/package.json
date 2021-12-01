@@ -1,0 +1,47 @@
+{
+  "name": "create-lit-project-postcss-ts-server",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:src": "webpack",
+    "build:css": "postcss ./src/css/style.css -d public",
+    "build": "yarn build:src && yarn build:css",
+    "watch:src": "webpack --watch",
+    "watch:css": "postcss -w ./src/css/style.css -d public ",
+    "build:server": "tsc --project ./api",
+    "watch:server": "tsc --watch --project ./api",
+    "setup": "yarn build:src && yarn build:css && yarn build:server",
+    "devServer": "npm-run-all -p serve watch:server watch:css watch:src",
+    "dev": "yarn setup && yarn devServer",
+    "serve": "nodemon index"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/plugin-transform-typescript": "^7.16.1",
+    "@babel/preset-env": "^7.16.4",
+    "@types/express": "^4.17.13",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "postcss-discard-comments": "^5.0.1",
+    "postcss-discard-empty": "^5.0.1",
+    "postcss-loader": "^6.2.0",
+    "postcss-nested": "^5.0.6",
+    "postcss-syntax": "^0.36.2",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
+  }
+}

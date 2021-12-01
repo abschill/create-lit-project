@@ -30,5 +30,5 @@ module.exports = {
         static: path.join( process.cwd(), 'public' ),
         compress: true,
         port: 3000,
-      },
+    },
 }
