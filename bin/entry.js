@@ -4,6 +4,7 @@ const { flags } = require( './enums' );
 const program = require( './program' );
 
 const run = () => {
+    console.time( 'time');
     const programArg = argv.splice( 2 );
     const major_version = version.split( 'v' )
     .pop().split( '.' ).shift();

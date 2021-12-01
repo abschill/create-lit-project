@@ -16,6 +16,24 @@ const setPath = ( lang, style, server ) => {
 const getArg = ( config, arg ) => {
     return config.filter( flag => flag.flag === arg ).shift();
 };
+
+const writeFiles = ( build ) => {
+    const inPath = setPath( build.language, build.styles, build.server );
+    fs.copy( inPath, build.outputPath, err => {
+        if ( err ) return color( 'FgRed', err );
+        color( 'FgGreen', 'Success Creating Initial Files at' );
+        color( 'FgBlue', build.outputPath );
+        fs.outputFile( path.resolve( build.outputPath, '.gitignore' ), gitIgnore, err => {
+            if( err ) return color( 'FgRed', 'Error Creating .gitignore' );
+            color( 'FgGreen', `Created .gitignore` );
+            color( 'FgGreen', `Created ${build.language} Project with ${build.styles}` );
+            console.timeEnd( 'time' );
+        } )
+        
+    } );
+    
+}
+
 const program = ( config ) => {
     const build = {};
     const flagSymbols = flags.map( flag => flag.symbol );
@@ -53,7 +71,6 @@ const program = ( config ) => {
     } 
 
     build.outputPath = _buildPath;
-    
     const langArg = getArg( build.procedure, '-l' );
     
     const buildLang = languageMap.filter( lang => lang.includes( langArg.value ) ).shift()[0];
@@ -70,14 +87,10 @@ const program = ( config ) => {
 
 
     if( build.procedure.length === 0 ) {
-        const inPath = setPath( build.language, build.styles, build.server );
-        fs.copySync( inPath, build.outputPath );
-        fs.writeFileSync( path.resolve( build.outputPath, '.gitignore' ), gitIgnore )
-        color( 'FgGreen', 'Success at\n' + build.outputPath );
-        color( 'FgGreen', `Created ${build.language} Project with ${build.styles}` );
+        return writeFiles( build );
     }
     else {
-        color( 'FgRed', 'Something Went wrong with the procedure' );
+        return color( 'FgRed', 'Something Went wrong with the procedure' );
     }
 }
 
