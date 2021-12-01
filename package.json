@@ -1,13 +1,11 @@
 {
   "name": "create-lit-project",
-  "author":"abschill",
-  "version": "0.1.8",
+  "author": "abschill",
+  "version": "0.1.81",
   "bin": "bin/entry.js",
   "license": "MIT",
   "dependencies": {
-    "terminal-color": "^0.1.2"
-  },
-  "devDependencies": {
+    "terminal-color": "^0.1.2",
     "fs-extra": "^10.0.0"
   }
 }
