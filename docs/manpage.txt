@@ -1,0 +1,12 @@
+create-lit-project manpage
+##################
+
+Options: 
+    --help | Prints Help Menu
+    -o, --output | Expects: output directory relative to cwd of calling directory | Default: .
+    -l, --language | Allowed: ts, js, typescript, javascript | Default: js
+    -s, --styles | Allowed: shadow, css, sass, tailwind | Default: Shadow
+    -http, --server | Boolean
+
+Example:
+    npx create-lit-project -o src -l ts

@@ -9,3 +9,5 @@ module.exports.flags = [
     { symbol: '-http', default: false, alias: '--server' },
     { symbol: '-o', default: '.', alias: '--output' }
 ]
+
+module.exports.manPage = '--help';
