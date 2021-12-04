@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const { argv, version, emitWarning } = require( 'process' );
 const { flags, manPage } = require( './enums' );
+const fs = require( 'fs' );
+const path = require( 'path' );
 const program = require( './program' );
 const run = () => {
     console.time( 'time' );
@@ -10,10 +12,8 @@ const run = () => {
     
     
     if( programArg.includes( manPage ) ) {
-        return () => {
-            const txt = fs.readFileSync( path.resolve( __dirname, '..', 'docs/manpage.txt' ) ).toString( 'utf-8' );
-            return console.log( txt );
-        }
+        const txt = fs.readFileSync( path.resolve( __dirname, '..', 'docs/manpage.txt' ) ).toString( 'utf-8' );
+        return console.log( txt );
     }
     else {
         const mvInt = parseInt( major_version );
