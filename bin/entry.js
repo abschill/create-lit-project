@@ -2,7 +2,6 @@
 const { argv, version, emitWarning } = require( 'process' );
 const { flags, manPage } = require( './enums' );
 const program = require( './program' );
-const printManPage = require( './manpage' );
 const run = () => {
     console.time( 'time' );
     const programArg = argv.splice( 2 );
@@ -11,7 +10,10 @@ const run = () => {
     
     
     if( programArg.includes( manPage ) ) {
-        return printManPage();
+        return () => {
+            const txt = fs.readFileSync( path.resolve( __dirname, '..', 'docs/manpage.txt' ) ).toString( 'utf-8' );
+            return console.log( txt );
+        }
     }
     else {
         const mvInt = parseInt( major_version );
