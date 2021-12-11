@@ -1,11 +1,23 @@
 {
   "name": "create-lit-project",
   "author": "abschill",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "bin": "bin/entry.js",
   "license": "MIT",
+  "scripts": {
+      "prepare": "npm shrinkwrap"
+  },
   "dependencies": {
     "terminal-color": "^0.1.2",
     "fs-extra": "^10.0.0"
-  }
+  },
+  "keywords":[
+      "lit",
+      "lit-html",
+      "lit-cli",
+      "boilerplate",
+      "typescript",
+      "javascript",
+      "cli"
+  ]
 }
