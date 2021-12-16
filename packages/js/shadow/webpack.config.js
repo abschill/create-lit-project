@@ -10,13 +10,13 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader',
-                exclude:/node_modules/
+                exclude: /node_modules/
             }
         ]
     },
     output: {
-        filename:'bundle.js',
-        path:path.resolve( __dirname, 'public' )
+        filename: 'main.js',
+        path: path.resolve( __dirname, 'public' )
     },
     resolve: {
         extensions:[ '.js' ]
@@ -26,5 +26,5 @@ module.exports = {
         static: path.join( __dirname, 'public' ),
         compress: true,
         port: 3000,
-      },
+    },
 }

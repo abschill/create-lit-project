@@ -8,23 +8,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test:/\.js$/,
-                use:'babel-loader',
-                exclude:/node_modules/
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
             }
         ]
     },
     output: {
-        filename:'bundle.js',
-        path:path.resolve( process.cwd(), 'public' )
+        filename: 'main.js',
+        path: path.resolve( process.cwd(), 'public' )
     },
     resolve: {
-        extensions:[ '.js' ]
+        extensions: [ '.js' ]
     },
     target: 'web',
     devServer: {
         static: path.join( process.cwd(), 'public' ),
         compress: true,
         port: 3000,
-      },
+    },
 }

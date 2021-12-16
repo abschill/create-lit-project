@@ -8,27 +8,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test:/\.js$/,
-                use:'babel-loader',
-                exclude:/node_modules/
-            },
-            {
-                test: /\.ts$/,
-                use: 'ts-loader'
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
             }
         ]
     },
     output: {
-        // filename:'bundle.js',
-        path:path.resolve( process.cwd(), 'public' )
+        filename: 'main.js',
+        path: path.resolve( process.cwd(), 'public' )
     },
     resolve: {
-        extensions:[ '.ts', '.js' ]
+        extensions: [ '.ts', '.js' ]
     },
     target: 'web',
     devServer: {
         static: path.join( process.cwd(), 'public' ),
         compress: true,
         port: 3000,
-      },
+    },
 }

@@ -1,9 +1,12 @@
 {
   "name": "create-lit-project",
   "author": "abschill",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "bin": "bin/entry.js",
-  "license": "MIT",
+  "license": "GPL",
+  "man": [
+      "./docs/manpage.txt"
+  ],
   "scripts": {
       "prepare": "npm shrinkwrap"
   },

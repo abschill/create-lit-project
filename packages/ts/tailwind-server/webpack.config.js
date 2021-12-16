@@ -8,9 +8,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test:/\.js$/,
-                use:'babel-loader',
-                exclude:/node_modules/
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.ts$/,
@@ -19,11 +19,11 @@ module.exports = {
         ]
     },
     output: {
-        filename:'bundle.js',
-        path:path.resolve( process.cwd(), 'public' )
+        filename: 'main.js',
+        path: path.resolve( process.cwd(), 'public' )
     },
     resolve: {
-        extensions:[ '.ts', '.js' ]
+        extensions: [ '.ts', '.js' ]
     },
     target: 'web'
 }

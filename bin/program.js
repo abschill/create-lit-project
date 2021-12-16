@@ -29,9 +29,7 @@ const writeFiles = ( build ) => {
             color( 'FgGreen', `Created ${build.language} Project with ${build.styles}` );
             console.timeEnd( 'time' );
         } )
-        
     } );
-    
 }
 
 const program = ( config ) => {
