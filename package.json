@@ -1,7 +1,7 @@
 {
   "name": "create-lit-project",
   "author": "abschill",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "bin": "bin/entry.js",
   "license": "GPL",
   "man": [

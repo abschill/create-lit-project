@@ -1,12 +1,12 @@
 {
   "name": "create-lit-project",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "create-lit-project",
-      "version": "0.2.6",
+      "version": "0.2.7",
       "license": "GPL",
       "dependencies": {
         "fs-extra": "^10.0.0",
