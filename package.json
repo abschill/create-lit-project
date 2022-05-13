@@ -1,26 +1,27 @@
 {
-  "name": "create-lit-project",
-  "author": "abschill",
-  "version": "0.2.7",
-  "bin": "bin/entry.js",
-  "license": "GPL",
-  "man": [
-      "./docs/manpage.txt"
-  ],
-  "scripts": {
-      "prepare": "npm shrinkwrap"
-  },
-  "dependencies": {
-    "terminal-color": "^0.1.2",
-    "fs-extra": "^10.0.0"
-  },
-  "keywords":[
-      "lit",
-      "lit-html",
-      "lit-cli",
-      "boilerplate",
-      "typescript",
-      "javascript",
-      "cli"
-  ]
+    "name": "create-lit-project",
+    "author": "abschill",
+    "version": "0.3.1",
+    "bin": "bin/entry.js",
+    "license": "MIT",
+    "man": [
+        "./docs/manpage.txt"
+    ],
+    "scripts": {
+        "prepare": "npm shrinkwrap"
+    },
+    "dependencies": {
+        "fs-extra": "^10.0.0",
+        "inquirer": "^8.2.4",
+        "terminal-color": "^0.1.2"
+    },
+    "keywords": [
+        "lit",
+        "lit-html",
+        "lit-cli",
+        "boilerplate",
+        "typescript",
+        "javascript",
+        "cli"
+    ]
 }

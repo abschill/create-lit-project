@@ -1,25 +1,215 @@
 {
   "name": "create-lit-project",
-  "version": "0.2.7",
+  "version": "0.3.1",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
       "name": "create-lit-project",
-      "version": "0.2.7",
-      "license": "GPL",
+      "version": "0.3.1",
+      "license": "MIT",
       "dependencies": {
         "fs-extra": "^10.0.0",
+        "inquirer": "^8.2.4",
         "terminal-color": "^0.1.2"
       },
       "bin": {
         "create-lit-project": "bin/entry.js"
       }
     },
+    "node_modules/ansi-escapes": {
+      "version": "4.3.2",
+      "license": "MIT",
+      "dependencies": {
+        "type-fest": "^0.21.3"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/ansi-regex": {
+      "version": "5.0.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/ansi-styles": {
+      "version": "4.3.0",
+      "license": "MIT",
+      "dependencies": {
+        "color-convert": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "funding": {
+        "url": "https://github.com/chalk/ansi-styles?sponsor=1"
+      }
+    },
+    "node_modules/base64-js": {
+      "version": "1.5.1",
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "MIT"
+    },
+    "node_modules/bl": {
+      "version": "4.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "buffer": "^5.5.0",
+        "inherits": "^2.0.4",
+        "readable-stream": "^3.4.0"
+      }
+    },
+    "node_modules/buffer": {
+      "version": "5.7.1",
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "base64-js": "^1.3.1",
+        "ieee754": "^1.1.13"
+      }
+    },
+    "node_modules/chalk": {
+      "version": "4.1.2",
+      "license": "MIT",
+      "dependencies": {
+        "ansi-styles": "^4.1.0",
+        "supports-color": "^7.1.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/chalk/chalk?sponsor=1"
+      }
+    },
+    "node_modules/chardet": {
+      "version": "0.7.0",
+      "license": "MIT"
+    },
+    "node_modules/cli-cursor": {
+      "version": "3.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "restore-cursor": "^3.1.0"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/cli-spinners": {
+      "version": "2.6.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/cli-width": {
+      "version": "3.0.0",
+      "license": "ISC",
+      "engines": {
+        "node": ">= 10"
+      }
+    },
+    "node_modules/clone": {
+      "version": "1.0.4",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.8"
+      }
+    },
+    "node_modules/color-convert": {
+      "version": "2.0.1",
+      "license": "MIT",
+      "dependencies": {
+        "color-name": "~1.1.4"
+      },
+      "engines": {
+        "node": ">=7.0.0"
+      }
+    },
+    "node_modules/color-name": {
+      "version": "1.1.4",
+      "license": "MIT"
+    },
+    "node_modules/defaults": {
+      "version": "1.0.3",
+      "license": "MIT",
+      "dependencies": {
+        "clone": "^1.0.2"
+      }
+    },
+    "node_modules/emoji-regex": {
+      "version": "8.0.0",
+      "license": "MIT"
+    },
+    "node_modules/escape-string-regexp": {
+      "version": "1.0.5",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.8.0"
+      }
+    },
+    "node_modules/external-editor": {
+      "version": "3.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "chardet": "^0.7.0",
+        "iconv-lite": "^0.4.24",
+        "tmp": "^0.0.33"
+      },
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/figures": {
+      "version": "3.2.0",
+      "license": "MIT",
+      "dependencies": {
+        "escape-string-regexp": "^1.0.5"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
     "node_modules/fs-extra": {
-      "version": "10.0.0",
-      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-10.0.0.tgz",
-      "integrity": "sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==",
+      "version": "10.1.0",
       "license": "MIT",
       "dependencies": {
         "graceful-fs": "^4.2.0",
@@ -31,10 +221,95 @@
       }
     },
     "node_modules/graceful-fs": {
-      "version": "4.2.8",
-      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz",
-      "integrity": "sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==",
+      "version": "4.2.10",
       "license": "ISC"
+    },
+    "node_modules/has-flag": {
+      "version": "4.0.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/iconv-lite": {
+      "version": "0.4.24",
+      "license": "MIT",
+      "dependencies": {
+        "safer-buffer": ">= 2.1.2 < 3"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/ieee754": {
+      "version": "1.2.1",
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "BSD-3-Clause"
+    },
+    "node_modules/inherits": {
+      "version": "2.0.4",
+      "license": "ISC"
+    },
+    "node_modules/inquirer": {
+      "version": "8.2.4",
+      "license": "MIT",
+      "dependencies": {
+        "ansi-escapes": "^4.2.1",
+        "chalk": "^4.1.1",
+        "cli-cursor": "^3.1.0",
+        "cli-width": "^3.0.0",
+        "external-editor": "^3.0.3",
+        "figures": "^3.0.0",
+        "lodash": "^4.17.21",
+        "mute-stream": "0.0.8",
+        "ora": "^5.4.1",
+        "run-async": "^2.4.0",
+        "rxjs": "^7.5.5",
+        "string-width": "^4.1.0",
+        "strip-ansi": "^6.0.0",
+        "through": "^2.3.6",
+        "wrap-ansi": "^7.0.0"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      }
+    },
+    "node_modules/is-fullwidth-code-point": {
+      "version": "3.0.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/is-interactive": {
+      "version": "1.0.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/is-unicode-supported": {
+      "version": "0.1.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
     },
     "node_modules/jsonfile": {
       "version": "6.1.0",
@@ -48,11 +323,211 @@
         "graceful-fs": "^4.1.6"
       }
     },
+    "node_modules/lodash": {
+      "version": "4.17.21",
+      "license": "MIT"
+    },
+    "node_modules/log-symbols": {
+      "version": "4.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "chalk": "^4.1.0",
+        "is-unicode-supported": "^0.1.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/mimic-fn": {
+      "version": "2.1.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=6"
+      }
+    },
+    "node_modules/mute-stream": {
+      "version": "0.0.8",
+      "license": "ISC"
+    },
+    "node_modules/onetime": {
+      "version": "5.1.2",
+      "license": "MIT",
+      "dependencies": {
+        "mimic-fn": "^2.1.0"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/ora": {
+      "version": "5.4.1",
+      "license": "MIT",
+      "dependencies": {
+        "bl": "^4.1.0",
+        "chalk": "^4.1.0",
+        "cli-cursor": "^3.1.0",
+        "cli-spinners": "^2.5.0",
+        "is-interactive": "^1.0.0",
+        "is-unicode-supported": "^0.1.0",
+        "log-symbols": "^4.1.0",
+        "strip-ansi": "^6.0.0",
+        "wcwidth": "^1.0.1"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/os-tmpdir": {
+      "version": "1.0.2",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/readable-stream": {
+      "version": "3.6.0",
+      "license": "MIT",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "string_decoder": "^1.1.1",
+        "util-deprecate": "^1.0.1"
+      },
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/restore-cursor": {
+      "version": "3.1.0",
+      "license": "MIT",
+      "dependencies": {
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/run-async": {
+      "version": "2.4.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.12.0"
+      }
+    },
+    "node_modules/rxjs": {
+      "version": "7.5.5",
+      "license": "Apache-2.0",
+      "dependencies": {
+        "tslib": "^2.1.0"
+      }
+    },
+    "node_modules/safe-buffer": {
+      "version": "5.2.1",
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "MIT"
+    },
+    "node_modules/safer-buffer": {
+      "version": "2.1.2",
+      "license": "MIT"
+    },
+    "node_modules/signal-exit": {
+      "version": "3.0.7",
+      "license": "ISC"
+    },
+    "node_modules/string_decoder": {
+      "version": "1.3.0",
+      "license": "MIT",
+      "dependencies": {
+        "safe-buffer": "~5.2.0"
+      }
+    },
+    "node_modules/string-width": {
+      "version": "4.2.3",
+      "license": "MIT",
+      "dependencies": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^6.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/strip-ansi": {
+      "version": "6.0.1",
+      "license": "MIT",
+      "dependencies": {
+        "ansi-regex": "^5.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/supports-color": {
+      "version": "7.2.0",
+      "license": "MIT",
+      "dependencies": {
+        "has-flag": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
     "node_modules/terminal-color": {
       "version": "0.1.2",
       "resolved": "https://registry.npmjs.org/terminal-color/-/terminal-color-0.1.2.tgz",
       "integrity": "sha512-xHiCbn3yTpsMCPIA0pxG4SPaisYUaLBv60PJ/FmG3R5OAgfOA4VR4aZIrckyqWlhb0kPxaMPO/+BnXTnSYtk1Q==",
       "license": "ISC"
+    },
+    "node_modules/through": {
+      "version": "2.3.8",
+      "license": "MIT"
+    },
+    "node_modules/tmp": {
+      "version": "0.0.33",
+      "license": "MIT",
+      "dependencies": {
+        "os-tmpdir": "~1.0.2"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      }
+    },
+    "node_modules/tslib": {
+      "version": "2.4.0",
+      "license": "0BSD"
+    },
+    "node_modules/type-fest": {
+      "version": "0.21.3",
+      "license": "(MIT OR CC0-1.0)",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
     },
     "node_modules/universalify": {
       "version": "2.0.0",
@@ -62,13 +537,130 @@
       "engines": {
         "node": ">= 10.0.0"
       }
+    },
+    "node_modules/util-deprecate": {
+      "version": "1.0.2",
+      "license": "MIT"
+    },
+    "node_modules/wcwidth": {
+      "version": "1.0.1",
+      "license": "MIT",
+      "dependencies": {
+        "defaults": "^1.0.3"
+      }
+    },
+    "node_modules/wrap-ansi": {
+      "version": "7.0.0",
+      "license": "MIT",
+      "dependencies": {
+        "ansi-styles": "^4.0.0",
+        "string-width": "^4.1.0",
+        "strip-ansi": "^6.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/chalk/wrap-ansi?sponsor=1"
+      }
     }
   },
   "dependencies": {
+    "ansi-escapes": {
+      "version": "4.3.2",
+      "requires": {
+        "type-fest": "^0.21.3"
+      }
+    },
+    "ansi-regex": {
+      "version": "5.0.1"
+    },
+    "ansi-styles": {
+      "version": "4.3.0",
+      "requires": {
+        "color-convert": "^2.0.1"
+      }
+    },
+    "base64-js": {
+      "version": "1.5.1"
+    },
+    "bl": {
+      "version": "4.1.0",
+      "requires": {
+        "buffer": "^5.5.0",
+        "inherits": "^2.0.4",
+        "readable-stream": "^3.4.0"
+      }
+    },
+    "buffer": {
+      "version": "5.7.1",
+      "requires": {
+        "base64-js": "^1.3.1",
+        "ieee754": "^1.1.13"
+      }
+    },
+    "chalk": {
+      "version": "4.1.2",
+      "requires": {
+        "ansi-styles": "^4.1.0",
+        "supports-color": "^7.1.0"
+      }
+    },
+    "chardet": {
+      "version": "0.7.0"
+    },
+    "cli-cursor": {
+      "version": "3.1.0",
+      "requires": {
+        "restore-cursor": "^3.1.0"
+      }
+    },
+    "cli-spinners": {
+      "version": "2.6.1"
+    },
+    "cli-width": {
+      "version": "3.0.0"
+    },
+    "clone": {
+      "version": "1.0.4"
+    },
+    "color-convert": {
+      "version": "2.0.1",
+      "requires": {
+        "color-name": "~1.1.4"
+      }
+    },
+    "color-name": {
+      "version": "1.1.4"
+    },
+    "defaults": {
+      "version": "1.0.3",
+      "requires": {
+        "clone": "^1.0.2"
+      }
+    },
+    "emoji-regex": {
+      "version": "8.0.0"
+    },
+    "escape-string-regexp": {
+      "version": "1.0.5"
+    },
+    "external-editor": {
+      "version": "3.1.0",
+      "requires": {
+        "chardet": "^0.7.0",
+        "iconv-lite": "^0.4.24",
+        "tmp": "^0.0.33"
+      }
+    },
+    "figures": {
+      "version": "3.2.0",
+      "requires": {
+        "escape-string-regexp": "^1.0.5"
+      }
+    },
     "fs-extra": {
-      "version": "10.0.0",
-      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-10.0.0.tgz",
-      "integrity": "sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==",
+      "version": "10.1.0",
       "requires": {
         "graceful-fs": "^4.2.0",
         "jsonfile": "^6.0.1",
@@ -76,9 +668,51 @@
       }
     },
     "graceful-fs": {
-      "version": "4.2.8",
-      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz",
-      "integrity": "sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg=="
+      "version": "4.2.10"
+    },
+    "has-flag": {
+      "version": "4.0.0"
+    },
+    "iconv-lite": {
+      "version": "0.4.24",
+      "requires": {
+        "safer-buffer": ">= 2.1.2 < 3"
+      }
+    },
+    "ieee754": {
+      "version": "1.2.1"
+    },
+    "inherits": {
+      "version": "2.0.4"
+    },
+    "inquirer": {
+      "version": "8.2.4",
+      "requires": {
+        "ansi-escapes": "^4.2.1",
+        "chalk": "^4.1.1",
+        "cli-cursor": "^3.1.0",
+        "cli-width": "^3.0.0",
+        "external-editor": "^3.0.3",
+        "figures": "^3.0.0",
+        "lodash": "^4.17.21",
+        "mute-stream": "0.0.8",
+        "ora": "^5.4.1",
+        "run-async": "^2.4.0",
+        "rxjs": "^7.5.5",
+        "string-width": "^4.1.0",
+        "strip-ansi": "^6.0.0",
+        "through": "^2.3.6",
+        "wrap-ansi": "^7.0.0"
+      }
+    },
+    "is-fullwidth-code-point": {
+      "version": "3.0.0"
+    },
+    "is-interactive": {
+      "version": "1.0.0"
+    },
+    "is-unicode-supported": {
+      "version": "0.1.0"
     },
     "jsonfile": {
       "version": "6.1.0",
@@ -89,15 +723,145 @@
         "universalify": "^2.0.0"
       }
     },
+    "lodash": {
+      "version": "4.17.21"
+    },
+    "log-symbols": {
+      "version": "4.1.0",
+      "requires": {
+        "chalk": "^4.1.0",
+        "is-unicode-supported": "^0.1.0"
+      }
+    },
+    "mimic-fn": {
+      "version": "2.1.0"
+    },
+    "mute-stream": {
+      "version": "0.0.8"
+    },
+    "onetime": {
+      "version": "5.1.2",
+      "requires": {
+        "mimic-fn": "^2.1.0"
+      }
+    },
+    "ora": {
+      "version": "5.4.1",
+      "requires": {
+        "bl": "^4.1.0",
+        "chalk": "^4.1.0",
+        "cli-cursor": "^3.1.0",
+        "cli-spinners": "^2.5.0",
+        "is-interactive": "^1.0.0",
+        "is-unicode-supported": "^0.1.0",
+        "log-symbols": "^4.1.0",
+        "strip-ansi": "^6.0.0",
+        "wcwidth": "^1.0.1"
+      }
+    },
+    "os-tmpdir": {
+      "version": "1.0.2"
+    },
+    "readable-stream": {
+      "version": "3.6.0",
+      "requires": {
+        "inherits": "^2.0.3",
+        "string_decoder": "^1.1.1",
+        "util-deprecate": "^1.0.1"
+      }
+    },
+    "restore-cursor": {
+      "version": "3.1.0",
+      "requires": {
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2"
+      }
+    },
+    "run-async": {
+      "version": "2.4.1"
+    },
+    "rxjs": {
+      "version": "7.5.5",
+      "requires": {
+        "tslib": "^2.1.0"
+      }
+    },
+    "safe-buffer": {
+      "version": "5.2.1"
+    },
+    "safer-buffer": {
+      "version": "2.1.2"
+    },
+    "signal-exit": {
+      "version": "3.0.7"
+    },
+    "string_decoder": {
+      "version": "1.3.0",
+      "requires": {
+        "safe-buffer": "~5.2.0"
+      }
+    },
+    "string-width": {
+      "version": "4.2.3",
+      "requires": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^6.0.1"
+      }
+    },
+    "strip-ansi": {
+      "version": "6.0.1",
+      "requires": {
+        "ansi-regex": "^5.0.1"
+      }
+    },
+    "supports-color": {
+      "version": "7.2.0",
+      "requires": {
+        "has-flag": "^4.0.0"
+      }
+    },
     "terminal-color": {
       "version": "0.1.2",
       "resolved": "https://registry.npmjs.org/terminal-color/-/terminal-color-0.1.2.tgz",
       "integrity": "sha512-xHiCbn3yTpsMCPIA0pxG4SPaisYUaLBv60PJ/FmG3R5OAgfOA4VR4aZIrckyqWlhb0kPxaMPO/+BnXTnSYtk1Q=="
     },
+    "through": {
+      "version": "2.3.8"
+    },
+    "tmp": {
+      "version": "0.0.33",
+      "requires": {
+        "os-tmpdir": "~1.0.2"
+      }
+    },
+    "tslib": {
+      "version": "2.4.0"
+    },
+    "type-fest": {
+      "version": "0.21.3"
+    },
     "universalify": {
       "version": "2.0.0",
       "resolved": "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz",
       "integrity": "sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ=="
+    },
+    "util-deprecate": {
+      "version": "1.0.2"
+    },
+    "wcwidth": {
+      "version": "1.0.1",
+      "requires": {
+        "defaults": "^1.0.3"
+      }
+    },
+    "wrap-ansi": {
+      "version": "7.0.0",
+      "requires": {
+        "ansi-styles": "^4.0.0",
+        "string-width": "^4.1.0",
+        "strip-ansi": "^6.0.0"
+      }
     }
   }
 }

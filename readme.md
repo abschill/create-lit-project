@@ -1,8 +1,9 @@
 # create-lit-project
+
 ## Usage
 
-```
-npx create-lit-project [flags]
+```cmd
+npx create-lit-project [options]
 ```
 
 ## Options
@@ -32,10 +33,13 @@ Default: shadow
 Boolean, if you put it, it will set up an actual server rather than webpack dev server
 Default: false
 
+## Interactive Mode
+
+Just add `-i` or `--interactive` to the script and it will prompt you for the options instead of entering them
 
 ## Example
 
-```
+```cmd
 npx create-lit-project -o src
 ```
 
