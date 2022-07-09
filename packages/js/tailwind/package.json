@@ -9,7 +9,7 @@
     "build": "yarn build:js && yarn build:css",
     "watch:js": "webpack --watch",
     "watch:css": "postcss -w ./src/styles/tailwind.css -d public ",
-    "serve": "npx webpack serve",
+    "serve": "npx http-server public -o /",
     "dev": "npm-run-all -p watch:css watch:js serve"
   },
   "devDependencies": {

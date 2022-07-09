@@ -4,7 +4,8 @@ const color = require('terminal-color');
 const { cwd, platform } = require('process');
 const {
 	languageMap,
-	flags, gitIgnore,
+	flags,
+	gitIgnore,
 	WEBPACK_JS,
 	WEBPACK_JS_HTTP,
 	WEBPACK_TS,
@@ -12,19 +13,16 @@ const {
 } = require('./enums');
 
 const setPath = (lang, style, server) => {
-    if( !server ) {
+    if(!server) {
         return path.resolve(__dirname, '..', 'packages', lang, style);
     }
-    else {
-        return path.resolve(__dirname, '..', 'packages', lang, `${style}-server`);
-    }
-}
+	return path.resolve(__dirname, '..', 'packages', lang, `${style}-server`);
+};
 
 const getArg = (config, arg) => config.filter(flag => flag.flag === arg).shift();
 
 const writeFiles = build => {
     const inPath = setPath(build.language, build.styles, build.server);
-
 
     fs.copy(inPath, build.outputPath, err => {
         if (err) return color('FgRed', err);
@@ -40,7 +38,7 @@ const writeFiles = build => {
         color('FgBlue', build.outputPath);
         fs.outputFile(path.resolve(build.outputPath, '.gitignore'), gitIgnore, err => {
             if(err) return color('FgRed', 'Error Creating .gitignore');
-            color('FgGreen', `Created .gitignore`);
+            color('FgGreen', 'Created .gitignore');
             color('FgGreen', `Created ${build.language} Project with ${build.styles}`);
             console.timeEnd('time');
         });
@@ -55,19 +53,16 @@ const program = (config) => {
         if(flagSymbols.includes(arg.flag)) {
             return arg;
         }
-        else {
-            return null;
-        }
-    } );
+		return null;
+    });
     const unInitializedProps = flags.map(flag => {
         const symbolsInserted = flagSymbolsInserted.map(f => f.flag);
-        if(!symbolsInserted.includes(flag.symbol)) {
-            return { flag: flag.symbol, value: flag.default };
+        if(symbolsInserted.includes(flag.symbol)) {
+
+			return null;
         }
-        else {
-            return null;
-        }
-    } ).filter(e => e);
+        return { flag: flag.symbol, value: flag.default };
+    }).filter(e => e);
     color('FgBlue', 'Creating Build Procedure..');
     build.procedure = [...flagSymbolsInserted, ...unInitializedProps];
     color('FgBlue', 'Finding System Path..');

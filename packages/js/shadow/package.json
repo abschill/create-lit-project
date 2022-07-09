@@ -6,7 +6,7 @@
   "scripts": {
     "build:js": "webpack",
     "watch:js": "webpack --watch",
-    "serve": "npx webpack serve",
+    "serve": "npx http-server public -o / -p 3000",
     "dev": "npm-run-all -p watch:js serve"
   },
   "dependencies": {

@@ -9,7 +9,7 @@
     "watch:js": "webpack --watch",
     "watch:sass": "sass --watch ./src/sass/style.scss:./public/style.css",
     "dev": "npm-run-all -p serve watch:sass watch:js",
-    "serve": "npx webpack serve"
+	"serve": "npx http-server public -o / -p 3000"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",

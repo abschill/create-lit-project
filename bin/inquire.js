@@ -2,8 +2,22 @@ const i = require('inquirer');
 const { join } = require('path');
 const { copy } = require('fs-extra');
 const color = require('terminal-color');
+const {
+	WEBPACK_JS,
+	WEBPACK_JS_HTTP,
+	WEBPACK_TS,
+	WEBPACK_TS_HTTP
+} = require('./enums');
 
 function exit_success() {
+	if(answers.language === 'js') {
+		const confString = build.server ? WEBPACK_JS_HTTP : WEBPACK_JS;
+		fs.writeFileSync(`${build.outputPath}/webpack.config.js`, confString);
+	}
+	else {
+		const confString = build.server ? WEBPACK_TS_HTTP : WEBPACK_TS;
+		fs.writeFileSync(`${build.outputPath}/webpack.config.js`, confString);
+	}
     color('FgGreen', 'Success.');
     process.exit(0);
 }
@@ -47,6 +61,7 @@ module.exports = function() {
         const writePath = join(process.cwd(), answers.path);
         console.log(writePath);
         copy(copyPath, writePath)
+
         .then(exit_success)
         .catch(exit_err);
     });
