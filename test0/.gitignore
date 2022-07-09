@@ -1,0 +1,4 @@
+node_modules
+api/dist
+public/*
+!/public/index.html
