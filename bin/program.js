@@ -9,7 +9,8 @@ const {
 	WEBPACK_JS,
 	WEBPACK_JS_HTTP,
 	WEBPACK_TS,
-	WEBPACK_TS_HTTP
+	WEBPACK_TS_HTTP,
+	DEFAULT_README
 } = require('./enums');
 
 const setPath = (lang, style, server) => {
@@ -34,6 +35,8 @@ const writeFiles = build => {
 			const confString = build.server ? WEBPACK_TS_HTTP : WEBPACK_TS;
 			fs.writeFileSync(`${build.outputPath}/webpack.config.js`, confString);
 		}
+		fs.writeFileSync(`${build.outputPath}/readme.md`, DEFAULT_README);
+		fs.writeFileSync(`${build.outputPath}/.gitkeep`, '\n');
         color('FgGreen', 'Success Creating Initial Files at');
         color('FgBlue', build.outputPath);
         fs.outputFile(path.resolve(build.outputPath, '.gitignore'), gitIgnore, err => {

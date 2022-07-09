@@ -15,7 +15,7 @@ module.exports.flags = [
 module.exports.DEFAULT_README = `
 To Start
 
-    yarn install
+    yarn
 
 or
 
@@ -35,8 +35,8 @@ module.exports.WEBPACK_JS = `const {
 const fs = require('fs')
 
 const filterFiles = (dir) => fs.readdirSync(dir)
-.filter(x => fs.lstatSync(path.join(dir, x )).isFile())
-.map(x => path.resolve(dir, x));
+.filter(x => fs.lstatSync(join(dir, x )).isFile())
+.map(x => resolve(dir, x));
 
 module.exports = {
 	context: resolve(__dirname, 'src/components'),

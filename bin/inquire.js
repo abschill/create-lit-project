@@ -7,7 +7,9 @@ const {
 	WEBPACK_JS,
 	WEBPACK_JS_HTTP,
 	WEBPACK_TS,
-	WEBPACK_TS_HTTP
+	WEBPACK_TS_HTTP,
+	DEFAULT_README,
+	gitIgnore
 } = require('./enums');
 
 function exit_success(answers) {
@@ -19,6 +21,9 @@ function exit_success(answers) {
 		const confString = answers.server ? WEBPACK_TS_HTTP : WEBPACK_TS;
 		fs.writeFileSync(`${answers.path}/webpack.config.js`, confString);
 	}
+	fs.writeFileSync(`${answers.path}/.gitkeep`, '\n');
+	fs.writeFileSync(`${answers.path}/.gitignore`, gitIgnore);
+	fs.writeFileSync(`${answers.path}/readme.md`, DEFAULT_README);
     color('FgGreen', 'Success.');
     process.exit(0);
 }
@@ -47,6 +52,7 @@ module.exports = function() {
             type: 'confirm',
             name: 'server',
             message: 'package server with project?',
+			default: false,
             choices: ['y', 'n']
         },
         {
