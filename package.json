@@ -8,7 +8,10 @@
         "./docs/manpage.txt"
     ],
     "scripts": {
-        "prepare": "npm shrinkwrap"
+		"shrinkwrap": "npm shrinkwrap",
+		"prepare": "husky install",
+		"prepublishOnly": "pinst --disable",
+		"postpublish": "pinst --enable"
     },
     "dependencies": {
         "fs-extra": "^10.0.0",
@@ -23,5 +26,14 @@
         "typescript",
         "javascript",
         "cli"
-    ]
+    ],
+    "devDependencies": {
+        "eslint": "^8.19.0",
+        "husky": "^8.0.1",
+        "mocha": "^10.0.0",
+        "nyc": "^15.1.0",
+        "pinst": "^3.0.0",
+        "prettier": "^2.7.1",
+        "prettier-eslint": "^15.0.1"
+    }
 }
