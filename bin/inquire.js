@@ -65,4 +65,4 @@ module.exports = function() {
         .then(exit_success)
         .catch(exit_err);
     });
-}
+};

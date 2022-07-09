@@ -1,40 +1,40 @@
 {
-  "name": "create-lit-project-sass-ts-server",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "build:src": "webpack",
-    "build:sass": "sass ./src/sass/style.scss:./public/style.css",
-    "watch:src": "webpack --watch",
-    "watch:sass": "sass --watch ./src/sass/style.scss:./public/style.css",
-    "build:server": "tsc --project ./api",
-    "watch:server": "tsc --watch --project ./api",
-    "setup": "yarn build:src && yarn build:sass && yarn build:server",
-    "devServer": "npm-run-all -p serve watch:server watch:sass watch:src",
-    "dev": "yarn setup && yarn devServer",
-    "serve": "nodemon index"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.0",
-    "@babel/plugin-proposal-decorators": "^7.16.4",
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "@babel/plugin-transform-typescript": "^7.16.1",
-    "@babel/preset-env": "^7.16.4",
-    "@types/express": "^4.17.13",
-    "babel-loader": "^8.2.3",
-    "lit": "^2.0.2",
-    "nodemon": "^2.0.15",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.43.4",
-    "ts-loader": "^9.2.6",
-    "typescript": "^4.5.2",
-    "webpack": "^5.64.2",
-    "webpack-cli": "^4.9.1"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+	"name": "create-lit-project-sass-ts-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"build:src": "webpack",
+		"build:sass": "sass ./src/sass/style.scss:./public/style.css",
+		"watch:src": "webpack --watch",
+		"watch:sass": "sass --watch ./src/sass/style.scss:./public/style.css",
+		"build:server": "tsc --project ./api",
+		"watch:server": "tsc --watch --project ./api",
+		"setup": "yarn build:src && yarn build:sass && yarn build:server",
+		"devServer": "npm-run-all -p serve watch:server watch:sass watch:src",
+		"dev": "yarn setup && yarn devServer",
+		"serve": "nodemon index"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.0",
+		"@babel/plugin-proposal-class-properties": "^7.16.0",
+		"@babel/plugin-proposal-decorators": "^7.16.4",
+		"@babel/plugin-transform-runtime": "^7.16.4",
+		"@babel/plugin-transform-typescript": "^7.16.1",
+		"@babel/preset-env": "^7.16.4",
+		"@types/express": "^4.17.13",
+		"babel-loader": "^8.2.3",
+		"lit": "^2.0.2",
+		"nodemon": "^2.0.15",
+		"npm-run-all": "^4.1.5",
+		"sass": "^1.43.4",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.2",
+		"webpack": "^5.64.2",
+		"webpack-cli": "^4.9.1"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	}
 }

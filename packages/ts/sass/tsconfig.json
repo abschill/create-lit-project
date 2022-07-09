@@ -1,20 +1,17 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "esModuleInterop": true,  
-        "removeComments": true,
-        "sourceMap": true,
-        "rootDirs": [
-            "./src/components",
-        ],
-        "module": "ES2015",
-        "target": "es2015",
-        "moduleResolution": "Node",
-        "allowSyntheticDefaultImports": true,
-        "outDir": "./public",
-        "experimentalDecorators": true,
-        "lib":["es2015", "dom"],
-        "strict": true,  
-       
-    }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"removeComments": true,
+		"sourceMap": true,
+		"rootDirs": ["./src/components"],
+		"module": "ES2015",
+		"target": "es2015",
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		"outDir": "./public",
+		"experimentalDecorators": true,
+		"lib": ["es2015", "dom"],
+		"strict": true
+	}
 }

@@ -1,39 +1,41 @@
 {
-    "name": "create-lit-project",
-    "author": "abschill",
-    "version": "0.3.2",
-    "bin": "bin/entry.js",
-    "license": "MIT",
-    "man": [
-        "./docs/manpage.txt"
-    ],
-    "scripts": {
+	"name": "create-lit-project",
+	"author": "abschill",
+	"version": "0.3.2",
+	"bin": "bin/entry.js",
+	"license": "MIT",
+	"man": [
+		"./docs/manpage.txt"
+	],
+	"scripts": {
 		"shrinkwrap": "npm shrinkwrap",
 		"prepare": "husky install",
 		"prepublishOnly": "pinst --disable",
-		"postpublish": "pinst --enable"
-    },
-    "dependencies": {
-        "fs-extra": "^10.0.0",
-        "inquirer": "^8.2.4",
-        "terminal-color": "^0.1.2"
-    },
-    "keywords": [
-        "lit",
-        "lit-html",
-        "lit-cli",
-        "boilerplate",
-        "typescript",
-        "javascript",
-        "cli"
-    ],
-    "devDependencies": {
-        "eslint": "^8.19.0",
-        "husky": "^8.0.1",
-        "mocha": "^10.0.0",
-        "nyc": "^15.1.0",
-        "pinst": "^3.0.0",
-        "prettier": "^2.7.1",
-        "prettier-eslint": "^15.0.1"
-    }
+		"postpublish": "pinst --enable",
+		"test": "echo placeholder",
+		"lint": "prettier --write ."
+	},
+	"dependencies": {
+		"fs-extra": "^10.0.0",
+		"inquirer": "^8.2.4",
+		"terminal-color": "^0.1.2"
+	},
+	"keywords": [
+		"lit",
+		"lit-html",
+		"lit-cli",
+		"boilerplate",
+		"typescript",
+		"javascript",
+		"cli"
+	],
+	"devDependencies": {
+		"eslint": "^8.19.0",
+		"husky": "^8.0.1",
+		"mocha": "^10.0.0",
+		"nyc": "^15.1.0",
+		"pinst": "^3.0.0",
+		"prettier": "^2.7.1",
+		"prettier-eslint": "^15.0.1"
+	}
 }

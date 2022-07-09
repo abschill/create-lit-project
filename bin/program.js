@@ -43,7 +43,7 @@ const writeFiles = build => {
             console.timeEnd('time');
         });
     });
-}
+};
 
 const program = (config) => {
     const build = {};
@@ -87,7 +87,7 @@ const program = (config) => {
     const buildStyles = getArg(build.procedure, '-s' );
     build.styles = buildStyles.value;
     build.procedure.splice(build.procedure.indexOf(buildStyles), 1);
-    const buildServer = getArg(build.procedure, '-http')
+    const buildServer = getArg(build.procedure, '-http');
     build.server = buildServer.value;
     build.procedure.splice(build.procedure.indexOf(buildServer), 1);
 
@@ -95,7 +95,7 @@ const program = (config) => {
 		return color('FgRed', 'Something Went wrong with the procedure');
     }
     return writeFiles(build);
-}
+};
 
 
 module.exports = program;

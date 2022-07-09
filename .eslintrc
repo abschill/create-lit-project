@@ -1,10 +1,14 @@
 {
 	"parserOptions": {
-	  "ecmaVersion": 7,
-	  "sourceType": "module"
+		"ecmaVersion": 7,
+		"sourceType": "module"
 	},
 	"rules": {
-		"arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+		"arrow-body-style": [
+			"error",
+			"as-needed",
+			{ "requireReturnForObjectLiteral": true }
+		],
 		"no-extra-semi": ["warn"],
 		"quotes": ["warn", "single"],
 		"semi": ["warn", "always"]
