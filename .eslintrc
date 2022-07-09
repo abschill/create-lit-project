@@ -1,14 +1,18 @@
 {
 	"parserOptions": {
 		"ecmaVersion": 7,
-		"sourceType": "module"
+		"sourceType": "module",
+		"ecmaFeatures": {
+            "globalReturn": true
+        }
+	},
+	"extends": "eslint:recommended",
+	"env": {
+		"es6": true,
+		"node": true,
+		"mocha": true
 	},
 	"rules": {
-		"arrow-body-style": [
-			"error",
-			"as-needed",
-			{ "requireReturnForObjectLiteral": true }
-		],
 		"no-extra-semi": ["warn"],
 		"quotes": ["warn", "single"],
 		"semi": ["warn", "always"]

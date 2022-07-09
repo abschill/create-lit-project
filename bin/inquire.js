@@ -2,6 +2,7 @@ const i = require('inquirer');
 const { join } = require('path');
 const { copy } = require('fs-extra');
 const color = require('terminal-color');
+const fs = require('fs');
 const {
 	WEBPACK_JS,
 	WEBPACK_JS_HTTP,
@@ -9,14 +10,14 @@ const {
 	WEBPACK_TS_HTTP
 } = require('./enums');
 
-function exit_success() {
+function exit_success(answers) {
 	if(answers.language === 'js') {
-		const confString = build.server ? WEBPACK_JS_HTTP : WEBPACK_JS;
-		fs.writeFileSync(`${build.outputPath}/webpack.config.js`, confString);
+		const confString = answers.server ? WEBPACK_JS_HTTP : WEBPACK_JS;
+		fs.writeFileSync(`${answers.path}/webpack.config.js`, confString);
 	}
 	else {
-		const confString = build.server ? WEBPACK_TS_HTTP : WEBPACK_TS;
-		fs.writeFileSync(`${build.outputPath}/webpack.config.js`, confString);
+		const confString = answers.server ? WEBPACK_TS_HTTP : WEBPACK_TS;
+		fs.writeFileSync(`${answers.path}/webpack.config.js`, confString);
 	}
     color('FgGreen', 'Success.');
     process.exit(0);
@@ -61,8 +62,8 @@ module.exports = function() {
         const writePath = join(process.cwd(), answers.path);
         console.log(writePath);
         copy(copyPath, writePath)
-
-        .then(exit_success)
+        .then(() => exit_success(answers))
         .catch(exit_err);
     });
+	return;
 };

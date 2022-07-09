@@ -12,6 +12,21 @@ module.exports.flags = [
     { symbol: '-o', default: '.', alias: '--output' }
 ];
 
+module.exports.DEFAULT_README = `
+To Start
+
+    yarn install
+
+or
+
+    npm install
+
+then
+
+    yarn dev
+
+if using npm, change package.json scripts to npm not yarn calls
+`;
 
 module.exports.WEBPACK_JS = `const {
 	join,
