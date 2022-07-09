@@ -8,7 +8,7 @@ class MyElement extends LitElement {
 	}
 
 	render() {
-		return html`<h1 class="my-element">Sass/Lit Template</h1>`;
+		return html`<h1 class="my-element">My Element</h1>`;
 	}
 }
 customElements.define('my-element', MyElement);

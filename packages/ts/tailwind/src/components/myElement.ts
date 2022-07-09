@@ -11,7 +11,7 @@ export class MyElement extends LitElement {
 
 	render() {
 		return html`<div class="px-4 text-xl text-black">
-			Lit / Tailwind Template.
+			My Element
 		</div>`;
 	}
 }

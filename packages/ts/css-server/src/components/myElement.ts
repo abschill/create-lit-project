@@ -10,6 +10,6 @@ export class MyElement extends LitElement {
 	}
 
 	render() {
-		return html`<div class="myElement">PostCSS / Lit Starter</div>`;
+		return html`<div class="myElement">My Element</div>`;
 	}
 }

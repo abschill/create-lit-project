@@ -8,7 +8,7 @@ export class MyElement extends LitElement {
 	}
 
 	render() {
-		return html`<div class="myElement">PostCSS / Lit Starter JS</div>`;
+		return html`<div class="myElement">My Element</div>`;
 	}
 }
 customElements.define('my-element', MyElement);

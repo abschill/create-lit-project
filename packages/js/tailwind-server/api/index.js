@@ -8,7 +8,7 @@ api.use(express.json());
 
 api.use(express.static(path.join(process.cwd(), 'public')));
 
-api.get('*', async (req, res) => res.status(404).json({ msg: 'Not Found' }));
+api.get('*', (req, res) => res.status(404).json({ msg: 'Not Found' }));
 
 const server = createServer(api);
 

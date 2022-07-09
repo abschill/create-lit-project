@@ -15,6 +15,6 @@ export class MyElement extends LitElement {
 	}
 
 	render() {
-		return html`<div class="my-element">Default Lit Template.</div>`;
+		return html`<div class="my-element">My Element</div>`;
 	}
 }
