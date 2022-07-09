@@ -13,20 +13,20 @@ if(programArg.includes('-i') || programArg.includes('--interactive')) {
 }
 
 if(programArg.includes(manPage)) {
-    return console.log(fs.readFileSync(path.resolve( __dirname, '..', 'docs/manpage.txt' ) ).toString( 'utf-8' ));
+    return console.log(fs.readFileSync(path.resolve( __dirname, '..', 'docs/manpage.txt')).toString('utf-8'));
 }
 else {
     console.time('time');
     const mvInt = parseInt(major_version);
     if(mvInt < 16) {
-        emitWarning( `Node Version ${mvInt} is not LTS, consider updating or you may encounter bugs` );
+        emitWarning(`Node Version ${mvInt} is not LTS, consider updating or you may encounter bugs`);
     }
-    
+
     const args = flags.map(flag => {
         const sym = programArg.indexOf(flag.symbol);
         const alias = programArg.indexOf(flag.alias);
         if(sym !== -1) {
-            return flag.symbol === '-http' ? 
+            return flag.symbol === '-http' ?
             { flag: flag.symbol, value: true }:
             { flag: flag.symbol, value: programArg[sym + 1] };
         }
