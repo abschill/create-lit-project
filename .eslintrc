@@ -3,8 +3,8 @@
 		"ecmaVersion": 7,
 		"sourceType": "module",
 		"ecmaFeatures": {
-            "globalReturn": true
-        }
+			"globalReturn": true
+		}
 	},
 	"extends": "eslint:recommended",
 	"env": {
